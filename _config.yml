@@ -68,4 +68,7 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: 
+      github: git@github.com:chongjohn716/notes.git,gh-pages
+      coding: git@git.coding.net:chong-john/notes.git,coding-pages
