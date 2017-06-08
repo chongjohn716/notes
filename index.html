@@ -68,6 +68,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo-deploy-error" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/notes/2017/06/08/hexo-deploy-error/" class="article-date">
+  <time datetime="2017-06-08T13:57:14.000Z" itemprop="datePublished">2017-06-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/notes/2017/06/08/hexo-deploy-error/">【Memo】 执行 hexo -d 时报错</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>执行 <code>hexo -d</code> 时，出现下面错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ERROR Deployer not found: git</div></pre></td></tr></table></figure></p>
+<img src="/notes/2017/06/08/hexo-deploy-error/d_error.png" alt="ERROR Deployer not found: git" title="ERROR Deployer not found: git">
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>安装 <code>hexo-deployer-git</code> 插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<img src="/notes/2017/06/08/hexo-deploy-error/install_d_git.png" alt="npm install hexo-deployer-git --save" title="npm install hexo-deployer-git --save">
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chong-john.coding.me/notes/2017/06/08/hexo-deploy-error/" data-id="cj3ojokhj0001ykui09wgf99c" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/notes/tags/Memo-Hexo/">Memo, Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Hexo-同时提交到-Github-和-Coding" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/notes/2017/06/08/Hexo-同时提交到-Github-和-Coding/" class="article-date">
@@ -82,7 +125,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/notes/2017/06/08/Hexo-同时提交到-Github-和-Coding/">Hexo-同时提交到 Github 和 Coding</a>
+      <a class="article-title" href="/notes/2017/06/08/Hexo-同时提交到-Github-和-Coding/">Hexo 同时提交到 Github 和 Coding</a>
     </h1>
   
 
@@ -90,21 +133,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>目的: 将 <code>Hexo</code> 资源代码同时发布到 <code>Github</code> 和 <code>Coding</code>，通过 <code>Hexo</code> 的部署命令将静态文件部署到两个远程仓库的 <code>pages</code> 分支。</p>
-</blockquote>
-<p>假设已经将本地代码发布到 <code>Github</code> 上，如果没有，参考这个文章来操作，‘20分钟教你使用hexo搭建github博客 <a href="http://www.jianshu.com/p/e99ed60390a8’" target="_blank" rel="external">http://www.jianshu.com/p/e99ed60390a8’</a></p>
+        <hr>
+<p><strong>目的</strong>: 将 <code>Hexo</code> 资源代码同时发布到 <code>Github</code> 和 <code>Coding</code>，通过 <code>Hexo</code> 的部署命令将静态文件部署到两个远程仓库的 <code>pages</code> 分支。</p>
+<p>假设已经将本地代码发布到 <code>Github</code> 上，如果没有，参考这个文章来操作，<a href="http://www.jianshu.com/p/e99ed60390a8" target="_blank" rel="external">20分钟教你使用hexo搭建github博客</a></p>
 <h1 id="创建-Coding-项目"><a href="#创建-Coding-项目" class="headerlink" title="创建 Coding 项目"></a>创建 <code>Coding</code> 项目</h1><p>在 <code>Coding</code> 上创建一个空项目，同时创建 <code>coding-pages</code> 分支，并将 <code>pages服务</code> 设置为 <code>coding-pages</code> 分支。</p>
-<p>图片</p>
+<img src="/notes/2017/06/08/Hexo-同时提交到-Github-和-Coding/coding_branchs.png" alt="创建 coding-pages 分支" title="创建 coding-pages 分支">
+<img src="/notes/2017/06/08/Hexo-同时提交到-Github-和-Coding/pages_setting.png" alt="设置 coding-pages 到 pages 服务" title="设置 coding-pages 到 pages 服务">
 <h1 id="修改-config-yml-配置"><a href="#修改-config-yml-配置" class="headerlink" title="修改 _config.yml 配置"></a>修改 <code>_config.yml</code> 配置</h1><p>修改 <code>_config.yml</code> 配置的 <code>deploy</code> 项为如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> Deployment</div><div class="line"><span class="meta">#</span># Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: </div><div class="line">      github: git@github.com:chongjohn716/notes.git,gh-pages</div><div class="line">      coding: git@git.coding.net:chong-john/notes.git,coding-pages    # 注意这里的分支名不一样</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Deployment</span></div><div class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: </div><div class="line">      github: git@github.com:username/notes.git,gh-pages</div><div class="line">      coding: git@git.coding.net:username/notes.git,coding-pages    <span class="comment"># 注意这里的分支名不一样</span></div></pre></td></tr></table></figure>
+<h1 id="修改-git-config"><a href="#修改-git-config" class="headerlink" title="修改 git config"></a>修改 git config</h1><p>修改项目目录下 <code>.git/config</code> 文件中的 <code>remote</code> 为如下，注意将 <code>remote</code> 后面参数改为 <code>all</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[core]</div><div class="line">	repositoryformatversion = 0</div><div class="line">	filemode = <span class="literal">false</span></div><div class="line">	bare = <span class="literal">false</span></div><div class="line">	logallrefupdates = <span class="literal">true</span></div><div class="line">	symlinks = <span class="literal">false</span></div><div class="line">	ignorecase = <span class="literal">true</span></div><div class="line">[remote <span class="string">"all"</span>]</div><div class="line">	url = git@github.com:username/notes.git</div><div class="line">	url = git@git.coding.net:username/notes.git</div><div class="line">	fetch = +refs/heads/*:refs/remotes/origin/*</div></pre></td></tr></table></figure>
+<p>然后执行下面命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push all master</div></pre></td></tr></table></figure>
+<h1 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h1><p><a href="https://segmentfault.com/q/1010000000172591" target="_blank" rel="external">有没有办法同步 Coding 与 GitHub</a><br><a href="http://blog.csdn.net/u011303443/article/details/51509351" target="_blank" rel="external">hexo博客同时部署至github和Coding</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chong-john.coding.me/notes/2017/06/08/Hexo-同时提交到-Github-和-Coding/" data-id="cj3neam0n0000a0uiweyn81og" class="article-share-link">Share</a>
+      <a data-url="http://chong-john.coding.me/notes/2017/06/08/Hexo-同时提交到-Github-和-Coding/" data-id="cj3ojokha0000ykuir7o6kbmo" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/notes/tags/Hexo-Github-Coding/">Hexo, Github, Coding</a></li></ul>
+
     </footer>
   </div>
   
@@ -147,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chong-john.coding.me/notes/2017/06/08/hello-world/" data-id="cj3neam150001a0ui8tu8gbxl" class="article-share-link">Share</a>
+      <a data-url="http://chong-john.coding.me/notes/2017/06/08/hello-world/" data-id="cj3ojokhu0003ykui02j1zmlo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -166,9 +216,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/notes/tags/Hexo-Github-Coding/">Hexo, Github, Coding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/notes/tags/Memo-Hexo/">Memo, Hexo</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/notes/tags/Hexo-Github-Coding/" style="font-size: 10px;">Hexo, Github, Coding</a> <a href="/notes/tags/Memo-Hexo/" style="font-size: 10px;">Memo, Hexo</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -187,7 +251,11 @@
       <ul>
         
           <li>
-            <a href="/notes/2017/06/08/Hexo-同时提交到-Github-和-Coding/">Hexo-同时提交到 Github 和 Coding</a>
+            <a href="/notes/2017/06/08/hexo-deploy-error/">【Memo】 执行 hexo -d 时报错</a>
+          </li>
+        
+          <li>
+            <a href="/notes/2017/06/08/Hexo-同时提交到-Github-和-Coding/">Hexo 同时提交到 Github 和 Coding</a>
           </li>
         
           <li>
