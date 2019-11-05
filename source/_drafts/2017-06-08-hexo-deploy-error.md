@@ -9,16 +9,17 @@ tags: Memo, Hexo
 ## 问题描述
 
 执行 `hexo -d` 时，出现下面错误
-```
+
+```shell
 ERROR Deployer not found: git
 ```
 
 {% asset_img d_error.png ERROR Deployer not found: git %}
 
-
 ## 解决方法
 
 安装 `hexo-deployer-git` 插件
+
 ```bash
 npm install hexo-deployer-git --save
 ```
