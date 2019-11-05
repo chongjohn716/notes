@@ -1,5 +1,5 @@
 ---
-title: 【Memo】 执行 hexo -d 时报错
+title: 执行 hexo -d 时报错
 date: 2017-06-08 21:57:14
 tags: Memo, Hexo
 ---

@@ -11,7 +11,7 @@ tags: Hexo, Github, Coding
 假设已经将本地代码发布到 `Github` 上，如果没有，参考这个文章来操作，[20分钟教你使用hexo搭建github博客](http://www.jianshu.com/p/e99ed60390a8)
 
 
-# 创建 `Coding` 项目
+## 创建 `Coding` 项目
 
 在 `Coding` 上创建一个空项目，同时创建 `coding-pages` 分支，并将 `pages服务` 设置为 `coding-pages` 分支。
 
@@ -19,7 +19,7 @@ tags: Hexo, Github, Coding
 {% asset_img pages_setting.png 设置 coding-pages 到 pages 服务 %}
 
 
-# 修改 `_config.yml` 配置
+## 修改 `_config.yml` 配置
 
 修改 `_config.yml` 配置的 `deploy` 项为如下：
 
@@ -34,7 +34,7 @@ deploy:
 ```
 
 
-# 修改 git config
+## 修改 git config
 
 修改项目目录下 `.git/config` 文件中的 `remote` 为如下，注意将 `remote` 后面参数改为 `all`。
 
@@ -60,7 +60,7 @@ git push all master
 
 
 
-# 参考：
+## 参考：
 [有没有办法同步 Coding 与 GitHub](https://segmentfault.com/q/1010000000172591)
 [hexo博客同时部署至github和Coding](http://blog.csdn.net/u011303443/article/details/51509351)
 
