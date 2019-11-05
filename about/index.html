@@ -15,7 +15,7 @@
   <meta name="description" content="Note, Blog, Memo">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="undefined">
-  <title>John&#39;s Notes</title>
+  <title>关于 ~ John&#39;s Notes</title>
 
   <link rel="stylesheet" href="/notes/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="/notes/lib/bootstrap/css/bootstrap.min.css"  >
@@ -36,7 +36,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -110,10 +110,6 @@
           </div>
 
           
-            <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
-            </div>
-          
         </div>
       </div>
     </div>
@@ -124,67 +120,45 @@
       <div class="container nopadding-md">
         <div class="py-5 z-depth-3" id="board">
           
+            <div class="about-avatar">
+              <img src="/notes/img/avatar.png"
+                   class="img-fluid z-depth-1 rounded-circle"
+                   alt="avatar">
+            </div>
+          
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-
-  <div class="row mb-4 mx-auto">
+<div class="text-center">
+  <p class="h3">myname</p>
+  <p>info / info / info</p>
+  
     
     
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/notes/2019/11/05/web-安全浅述 --- XSS/">
-        <p class="h4 index-header">web 安全浅述 --- XSS</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Cross Site Scripting — 跨站脚本攻击
-原理在页面植入脚本
-危害
-获取用户数据
-冒充用户身份
-
-类型 (根据攻击来源)
-反射型: url 参数直接注入
-储存型: 储存到DB后，读取时注入，危害更大
-
-攻击点HTML 内容节点const content = `&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;`
-div.innerHTML = content
-
-HTML 属性&lt;img src=&quot;/404&quot; onerror=&quot;alert(&#39;xss&#39;)&quot;&gt;
-
-JavaScript 代码// 模板
-let tpl = &#39;#{data}&#39;
-let data = &#39;hello&quot;;alert(&quot;xss&quot;);&quot;&#39;
-
-// output
-let data = &quot;hello&quot;;alert(&#39;xss&#39;);&quot;&quot;
-
-富文本防御X-XSS-Protext</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-05&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/Memo,%20web%20%E5%AE%89%E5%85%A8,%20XSS">Memo, web 安全, XSS</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-
-
-
+    <a href="https://github.com"
+       class="h4 ">
+      <i class="fab fa-github" aria-hidden="true"></i>
+      
+    </a>
+    &nbsp;&nbsp;
+  
+    
+    
+    <a href="https://twitter.com"
+       class="h4 ">
+      <i class="fab fa-twitter" aria-hidden="true"></i>
+      
+    </a>
+    &nbsp;&nbsp;
+  
+    
+    
+</div>
+<div class="mt-5 markdown-body">
+  
+</div>
 
               </div>
             </div>
@@ -305,7 +279,7 @@ let data = &quot;hello&quot;;alert(&#39;xss&#39;);&quot;&quot;
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Notes of Mine&nbsp;",
+        "关于&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
