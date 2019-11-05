@@ -7,7 +7,7 @@ title: John's Notes
 subtitle: Notes of Mine
 description: Note, Blog, Memo
 author: John Doe
-language: 
+language: zh-CN
 timezone: 
 
 # URL
@@ -38,10 +38,10 @@ post_asset_folder: true
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
-  tab_replace:
+  tab_replace: false
 
 # Category & Tag
 default_category: uncategorized
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: fluid
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
