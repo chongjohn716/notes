@@ -68,9 +68,13 @@ body
 // Navbar
 
 .navbar
-  background-color transparent
+  background-color rgba(0, 0, 0, .2)
   font-size 0.875rem
   color $navbar-text-color
+  box-shadow: none;
+
+  &:not(.top-nav-collapse) 
+    border-bottom: 2px solid rgba(255,255,255,0.2)
 
   a
     color $navbar-text-color
