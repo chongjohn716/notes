@@ -36,7 +36,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -96,7 +96,7 @@
 </nav>
 
     <div class="view intro-2" id="background"
-         style="background: url('/img/default.png')no-repeat center center;
+         style="background: url('/notes/img/default.png')no-repeat center center;
            background-size: cover;
            background-attachment: fixed;">
       <div class="full-bg-img">
@@ -109,10 +109,6 @@
             
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
-            </div>
           
         </div>
       </div>
@@ -134,8 +130,49 @@
     
     
     <div class="col-12 col-md-8 m-auto">
+      <a href="/notes/2019/11/07/web-安全浅述 --- CSRF/">
+        <p class="h4 index-header">Web-安全浅述 --- CSRF</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">Cross Site Request Forgy — 跨站请求伪造
+原理
+危害用户在不知情的情况下，通过自己的身份提交请求，而被攻击者利用甚至获利
+防御
+禁止三方网站携带本站 cookies，cookies 配置 same-site 属性，新浏览器才有特性
+验证码，有效，用户体验不好
+token，解决验证码体验不好问题，不过效果不如验证码
+校验 referer，部分浏览器可以不携带或者更改referer
+
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-07&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>&nbsp;
+          
+            <a href="/tags/CSRF">CSRF</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
       <a href="/notes/2019/11/05/web-安全浅述 --- XSS/">
-        <p class="h4 index-header">web 安全浅述 --- XSS</p>
+        <p class="h4 index-header">Web 安全浅述 --- XSS</p>
         
         
           
@@ -175,7 +212,9 @@ let data = &quot;hello&quot;;alert(&#39;xss&#39;);&quot;&quot;
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/Memo,%20web%20%E5%AE%89%E5%85%A8,%20XSS">Memo, web 安全, XSS</a>&nbsp;
+            <a href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>&nbsp;
+          
+            <a href="/tags/XSS">XSS</a>&nbsp;
           
         
       </div>

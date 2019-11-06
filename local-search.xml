@@ -4,17 +4,52 @@
   
   
   <entry>
-    <title>web 安全浅述 --- XSS</title>
+    <title>Web-安全浅述 --- CSRF</title>
+    <link href="undefined2019/11/07/web-%E5%AE%89%E5%85%A8%E6%B5%85%E8%BF%B0%20---%20CSRF/"/>
+    <url>2019/11/07/web-%E5%AE%89%E5%85%A8%E6%B5%85%E8%BF%B0%20---%20CSRF/</url>
+    
+    <content type="html"><![CDATA[<p>Cross Site Request Forgy — 跨站请求伪造</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><img src="/notes/2019/11/07/web-安全浅述%20---%20CSRF/csrf.jpg" srcset="/img/loading.gif" title="ERROR Deployer not found: git"><h2 id="危害"><a href="#危害" class="headerlink" title="危害"></a>危害</h2><p>用户在不知情的情况下，通过自己的身份提交请求，而被攻击者利用甚至获利</p><h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2><ol><li>禁止三方网站携带本站 cookies，cookies 配置 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#SameSite_cookies" target="_blank" rel="noopener"><code>same-site</code></a> 属性，新浏览器才有特性</li><li>验证码，有效，用户体验不好</li><li>token，解决验证码体验不好问题，不过效果不如验证码</li><li>校验 referer，部分浏览器可以不携带或者更改referer</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Web 安全</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Web 安全</tag>
+      
+      <tag>CSRF</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Web 安全浅述 --- XSS</title>
     <link href="undefined2019/11/05/web-%E5%AE%89%E5%85%A8%E6%B5%85%E8%BF%B0%20---%20XSS/"/>
     <url>2019/11/05/web-%E5%AE%89%E5%85%A8%E6%B5%85%E8%BF%B0%20---%20XSS/</url>
     
     <content type="html"><![CDATA[<p>Cross Site Scripting — 跨站脚本攻击</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>在页面植入脚本</p><h2 id="危害"><a href="#危害" class="headerlink" title="危害"></a>危害</h2><ol><li>获取用户数据</li><li>冒充用户身份</li></ol><h2 id="类型-根据攻击来源"><a href="#类型-根据攻击来源" class="headerlink" title="类型 (根据攻击来源)"></a>类型 (根据攻击来源)</h2><ol><li>反射型: url 参数直接注入</li><li>储存型: 储存到DB后，读取时注入，危害更大</li></ol><h2 id="攻击点"><a href="#攻击点" class="headerlink" title="攻击点"></a>攻击点</h2><h3 id="HTML-内容节点"><a href="#HTML-内容节点" class="headerlink" title="HTML 内容节点"></a>HTML 内容节点</h3><pre><code class="javascript">const content = `&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;`div.innerHTML = content</code></pre><h3 id="HTML-属性"><a href="#HTML-属性" class="headerlink" title="HTML 属性"></a>HTML 属性</h3><pre><code class="javascript">&lt;img src=&quot;/404&quot; onerror=&quot;alert(&#39;xss&#39;)&quot;&gt;</code></pre><h3 id="JavaScript-代码"><a href="#JavaScript-代码" class="headerlink" title="JavaScript 代码"></a>JavaScript 代码</h3><pre><code class="javascript">// 模板let tpl = &#39;#{data}&#39;let data = &#39;hello&quot;;alert(&quot;xss&quot;);&quot;&#39;// outputlet data = &quot;hello&quot;;alert(&#39;xss&#39;);&quot;&quot;</code></pre><h3 id="富文本"><a href="#富文本" class="headerlink" title="富文本"></a>富文本</h3><h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2><h3 id="X-XSS-Protextion"><a href="#X-XSS-Protextion" class="headerlink" title="X-XSS-Protextion"></a>X-XSS-Protextion</h3><p>浏览器内置防御机制，通过相应头开启，作用有限</p><h3 id="转义写入内容"><a href="#转义写入内容" class="headerlink" title="转义写入内容"></a>转义写入内容</h3><p>将写 html 内容和属性的值进行转义, 针对提交的值, 在写入数据库前进行转义</p><ol><li><code>&amp;</code> 符号（放在最前面）</li><li>左右尖括号</li><li>单双引号</li><li>通过模本写入js的中的值执行 <code>JSON.stringify</code> 进行转义</li><li>避免通过模板输出js</li></ol><h3 id="富文本防御"><a href="#富文本防御" class="headerlink" title="富文本防御"></a>富文本防御</h3><p>黑名单</p><ol><li>校验 <code>script</code> 标签</li><li>校验 <code>javascript:</code></li><li><code>onerror</code> 和 <code>onload</code></li></ol><p>白名单</p><h3 id="js-xss-工具"><a href="#js-xss-工具" class="headerlink" title="js-xss 工具"></a>js-xss 工具</h3><p><a href="https://github.com/leizongmin/js-xss">leizongmin/js-xss</a></p><h3 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Security-Policy" target="_blank" rel="noopener">Content Security Policy</a> — 内容安全策略</p><img src="/notes/2019/11/05/web-安全浅述%20---%20XSS/csp.jpg" srcset="/img/loading.gif" title="ERROR Deployer not found: git">]]></content>
     
     
+    <categories>
+      
+      <category>Web 安全</category>
+      
+    </categories>
+    
     
     <tags>
       
-      <tag>Memo, web 安全, XSS</tag>
+      <tag>Web 安全</tag>
+      
+      <tag>XSS</tag>
       
     </tags>
     
