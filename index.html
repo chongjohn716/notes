@@ -130,7 +130,162 @@
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/notes/2019/11/07/web-安全浅述 --- CSRF/">
+      <a href="/notes/2019/11/08/web-安全浅述-传输安全/">
+        <p class="h4 index-header">web 安全浅述 --- 传输安全</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">Http 窃听获取用户数据，可能包括用户名、密码
+Http 篡改
+插入广告
+重定向网站
+植入脚本
+无法防御 XSS 和 CRSF 攻击
+
+Https通过 TLS(SSL) 加密传输数据，保证传输安全
+通过证书确认服务器身份，防止中间人攻击
+
+证书不能伪造
+证书私钥不能揭露
+域名管理权不能泄露
+CA 监管
+
+证书由 CA 提供
+
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-08&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>&nbsp;
+          
+            <a href="/tags/%E4%BC%A0%E8%BE%93%E5%AE%89%E5%85%A8">传输安全</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/notes/2019/11/08/web-安全浅述-点击劫持/">
+        <p class="h4 index-header">web 安全浅述 --- 点击劫持</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">通过用户点击，在用户不知情的情况下，发起操作
+将目标网站嵌入到 iframe 中，设置透明度为零，伪造一个界面，诱导用户操作
+特征
+用户亲自操作
+用户不知情
+
+防御
+X-Frame-Options 禁止内嵌或有限内嵌
+JavaScript 防止内嵌
+验证码等辅助手段
+
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-08&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>&nbsp;
+          
+            <a href="/tags/%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81">点击劫持</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/notes/2019/11/07/web-安全浅述-Cookies/">
+        <p class="h4 index-header">web 安全浅述 --- Cookies</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">特性
+浏览器数据存储
+服务端可通过 http 头设置
+请求时通过 http 头传递
+前端可读写 (http-noly不能读取)
+同源策略
+
+属性
+name
+value
+domain
+expires
+path
+http-only
+secure
+same-site
+
+通过设置 cookie 的有效期来删除
+登录用户凭证
+用户ID + 签名
+SessionId
+
+与 XSSXSS 可能盗取 cookies, 冒充用户身份, 设置 http-only 看防御
+与 CSRF利用 cookies 发起请求, 无法读写 cookies
+安全策略
+签名防篡改
+加密
+http-only (防止 XSS)
+secure
+same-site (防止 CSRF)
+
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-07&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>&nbsp;
+          
+            <a href="/tags/Cookies">Cookies</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/notes/2019/11/07/web-安全浅述-CSRF/">
         <p class="h4 index-header">Web-安全浅述 --- CSRF</p>
         
         
@@ -171,7 +326,7 @@ token，解决验证码体验不好问题，不过效果不如验证码
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/notes/2019/11/05/web-安全浅述 --- XSS/">
+      <a href="/notes/2019/11/05/web-安全浅述-XSS/">
         <p class="h4 index-header">Web 安全浅述 --- XSS</p>
         
         

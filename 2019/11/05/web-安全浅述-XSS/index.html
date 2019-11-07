@@ -15,7 +15,7 @@
   <meta name="description" content="Note, Blog, Memo">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="undefined">
-  <title>标签 - CSRF ~ John&#39;s Notes</title>
+  <title>Web 安全浅述 --- XSS ~ John&#39;s Notes</title>
 
   <link rel="stylesheet" href="/notes/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="/notes/lib/bootstrap/css/bootstrap.min.css"  >
@@ -107,6 +107,41 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期二, 十一月 5日 2019, 11:39 晚上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    288 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
           
@@ -117,35 +152,113 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 1 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/notes/2019/11/07/web-安全浅述-CSRF/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Web-安全浅述 --- CSRF</span>
-      <span style="float: right;">11-07</span>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p>Cross Site Scripting — 跨站脚本攻击</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>在页面植入脚本</p>
+<h2 id="危害"><a href="#危害" class="headerlink" title="危害"></a>危害</h2><ol>
+<li>获取用户数据</li>
+<li>冒充用户身份</li>
+</ol>
+<h2 id="类型-根据攻击来源"><a href="#类型-根据攻击来源" class="headerlink" title="类型 (根据攻击来源)"></a>类型 (根据攻击来源)</h2><ol>
+<li>反射型: url 参数直接注入</li>
+<li>储存型: 储存到DB后，读取时注入，危害更大</li>
+</ol>
+<h2 id="攻击点"><a href="#攻击点" class="headerlink" title="攻击点"></a>攻击点</h2><h3 id="HTML-内容节点"><a href="#HTML-内容节点" class="headerlink" title="HTML 内容节点"></a>HTML 内容节点</h3><pre><code class="javascript">const content = `&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;`
+div.innerHTML = content
+</code></pre>
+<h3 id="HTML-属性"><a href="#HTML-属性" class="headerlink" title="HTML 属性"></a>HTML 属性</h3><pre><code class="javascript">&lt;img src=&quot;/404&quot; onerror=&quot;alert(&#39;xss&#39;)&quot;&gt;
+</code></pre>
+<h3 id="JavaScript-代码"><a href="#JavaScript-代码" class="headerlink" title="JavaScript 代码"></a>JavaScript 代码</h3><pre><code class="javascript">// 模板
+let tpl = &#39;#{data}&#39;
+let data = &#39;hello&quot;;alert(&quot;xss&quot;);&quot;&#39;
 
-              </div>
-            </div>
+// output
+let data = &quot;hello&quot;;alert(&#39;xss&#39;);&quot;&quot;
+</code></pre>
+<h3 id="富文本"><a href="#富文本" class="headerlink" title="富文本"></a>富文本</h3><h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2><h3 id="X-XSS-Protextion"><a href="#X-XSS-Protextion" class="headerlink" title="X-XSS-Protextion"></a>X-XSS-Protextion</h3><p>浏览器内置防御机制，通过相应头开启，作用有限</p>
+<h3 id="转义写入内容"><a href="#转义写入内容" class="headerlink" title="转义写入内容"></a>转义写入内容</h3><p>将写 html 内容和属性的值进行转义, 针对提交的值, 在写入数据库前进行转义</p>
+<ol>
+<li><code>&amp;</code> 符号（放在最前面）</li>
+<li>左右尖括号</li>
+<li>单双引号</li>
+<li>通过模本写入js的中的值执行 <code>JSON.stringify</code> 进行转义</li>
+<li>避免通过模板输出js</li>
+</ol>
+<h3 id="富文本防御"><a href="#富文本防御" class="headerlink" title="富文本防御"></a>富文本防御</h3><p>黑名单</p>
+<ol>
+<li>校验 <code>script</code> 标签</li>
+<li>校验 <code>javascript:</code></li>
+<li><code>onerror</code> 和 <code>onload</code></li>
+</ol>
+<p>白名单</p>
+<h3 id="js-xss-工具"><a href="#js-xss-工具" class="headerlink" title="js-xss 工具"></a>js-xss 工具</h3><p><a href="https://github.com/leizongmin/js-xss">leizongmin/js-xss</a></p>
+<h3 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Security-Policy" target="_blank" rel="noopener">Content Security Policy</a> — 内容安全策略</p>
+<img src="/notes/2019/11/05/web-安全浅述-XSS/csp.jpg" srcset="/img/loading.gif" title="ERROR Deployer not found: git">
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+              <span>
+                <i class="iconfont icon-inbox"></i>
+                
+                  <a class="hover-with-bg" href="/categories/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>
+                  &nbsp;
+                
+                  <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0">笔记</a>
+                  &nbsp;
+                
+              </span>&nbsp;&nbsp;
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>
+                
+                  <a class="hover-with-bg" href="/tags/XSS">XSS</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -220,6 +333,11 @@
 
 
 
+  
+    <script src="/notes/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/notes/js/post.js" ></script>
+
 
 
   <script src="/notes/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -260,7 +378,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签 - CSRF&nbsp;",
+        "Web 安全浅述 --- XSS&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
