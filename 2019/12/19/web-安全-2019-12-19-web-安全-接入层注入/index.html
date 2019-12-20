@@ -15,7 +15,7 @@
   <meta name="description" content="Note, Blog, Memo">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="undefined">
-  <title>web 安全浅述 --- Cookies ~ John&#39;s Notes</title>
+  <title>web 安全 --- 接入层注入 ~ John&#39;s Notes</title>
 
   <link rel="stylesheet" href="/notes/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="/notes/lib/bootstrap/css/bootstrap.min.css"  >
@@ -111,7 +111,7 @@
               
                 <p class="mt-3">
                   <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-                  星期四, 十一月 7日 2019, 11:00 晚上
+                  星期四, 十二月 19日 2019, 12:48 凌晨
                 </p>
               
 
@@ -120,7 +120,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    135 字
+                    119 字
                   </span>&nbsp;
                 
 
@@ -161,37 +161,30 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
-            <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol>
-<li>浏览器数据存储</li>
-<li>服务端可通过 http 头设置</li>
-<li>请求时通过 http 头传递</li>
-<li>前端可读写 (<code>http-noly</code>不能读取)</li>
-<li>同源策略</li>
-</ol>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ol>
-<li>name</li>
-<li>value</li>
-<li>domain</li>
-<li>expires</li>
-<li>path</li>
-<li>http-only</li>
-<li>secure</li>
-<li>same-site</li>
-</ol>
-<p><strong>通过设置 <code>cookie</code> 的有效期来删除</strong></p>
-<h2 id="登录用户凭证"><a href="#登录用户凭证" class="headerlink" title="登录用户凭证"></a>登录用户凭证</h2><ol>
-<li>用户ID + 签名</li>
-<li>SessionId</li>
-</ol>
-<h2 id="与-XSS"><a href="#与-XSS" class="headerlink" title="与 XSS"></a>与 XSS</h2><p>XSS 可能盗取 cookies, 冒充用户身份, 设置 <code>http-only</code> 看防御</p>
-<h2 id="与-CSRF"><a href="#与-CSRF" class="headerlink" title="与 CSRF"></a>与 CSRF</h2><p>利用 cookies 发起请求, 无法读写 cookies</p>
-<h2 id="安全策略"><a href="#安全策略" class="headerlink" title="安全策略"></a>安全策略</h2><ol>
-<li>签名防篡改</li>
-<li>加密</li>
-<li>http-only (防止 XSS)</li>
-<li>secure</li>
-<li>same-site (防止 CSRF)</li>
-</ol>
+            <h2 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h2><ul>
+<li>存放结构化数据</li>
+<li>可高效操作大量数据</li>
+<li>方便处理数据间关联关系</li>
+<li>access/sqlite/mysql/mssql/oracle</li>
+</ul>
+<h2 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h2><h2 id="危害"><a href="#危害" class="headerlink" title="危害"></a>危害</h2><ul>
+<li>猜解密码</li>
+<li>获取数据</li>
+<li>删库删表</li>
+<li>拖库</li>
+</ul>
+<h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2><ul>
+<li>关闭错误输出</li>
+<li>输入校验（数据类型）</li>
+<li>数据进行转义</li>
+<li>参数化查询</li>
+<li>使用 ORM （对象关系映射）</li>
+</ul>
+<h2 id="NoSQL-注入和防御"><a href="#NoSQL-注入和防御" class="headerlink" title="NoSQL 注入和防御"></a>NoSQL 注入和防御</h2><ul>
+<li>检测数据类型</li>
+<li>类型转换</li>
+<li>代码写完整的查询条件</li>
+</ul>
 
             <hr>
           </div>
@@ -216,7 +209,7 @@
                 
                   <a class="hover-with-bg" href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>
                 
-                  <a class="hover-with-bg" href="/tags/Cookies">Cookies</a>
+                  <a class="hover-with-bg" href="/tags/%E6%8E%A5%E5%85%A5%E5%B1%82%E6%B3%A8%E5%85%A5">接入层注入</a>
                 
               </span>
             
@@ -368,7 +361,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "web 安全浅述 --- Cookies&nbsp;",
+        "web 安全 --- 接入层注入&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

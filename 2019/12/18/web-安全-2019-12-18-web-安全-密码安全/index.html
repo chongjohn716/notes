@@ -15,7 +15,7 @@
   <meta name="description" content="Note, Blog, Memo">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="undefined">
-  <title>标签 - 传输安全 ~ John&#39;s Notes</title>
+  <title>web 安全 --- 密码安全 ~ John&#39;s Notes</title>
 
   <link rel="stylesheet" href="/notes/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="/notes/lib/bootstrap/css/bootstrap.min.css"  >
@@ -107,6 +107,41 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期三, 十二月 18日 2019, 11:40 晚上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    126 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
           
@@ -117,35 +152,84 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 1 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/notes/2019/11/08/web-安全-2019-11-08-web-安全-传输安全/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Web 安全 --- 传输安全</span>
-      <span style="float: right;">11-08</span>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>身份证明</p>
+<h2 id="储存"><a href="#储存" class="headerlink" title="储存"></a>储存</h2><p>储存在数据库</p>
+<h3 id="泄露渠道"><a href="#泄露渠道" class="headerlink" title="泄露渠道"></a>泄露渠道</h3><p>数据库被攻入<br>服务器入侵<br>通讯窃听<br>内部人员泄露<br>其他网站（撞库）</p>
+<h3 id="hash-算法"><a href="#hash-算法" class="headerlink" title="hash 算法"></a>hash 算法</h3><p>雪崩效应<br>加密存储<br>非对称加密<br>复杂度要求<br>加盐</p>
+<h2 id="传输"><a href="#传输" class="headerlink" title="传输"></a>传输</h2><p>https<br>登录频率（暴力破解）<br>前端加密（意义有限）</p>
+<h2 id="替代方案"><a href="#替代方案" class="headerlink" title="替代方案"></a>替代方案</h2><h3 id="生物特征密码"><a href="#生物特征密码" class="headerlink" title="生物特征密码"></a>生物特征密码</h3><p>指纹<br>声纹<br>虹膜<br>人脸</p>
+<p>– 缺陷</p>
+<ol>
+<li>私密性 – 容易泄露</li>
+<li>安全性 – 碰撞</li>
+<li>唯一性 – 无法修改</li>
+</ol>
 
-              </div>
-            </div>
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+              <span>
+                <i class="iconfont icon-inbox"></i>
+                
+                  <a class="hover-with-bg" href="/categories/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>
+                  &nbsp;
+                
+                  <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0">笔记</a>
+                  &nbsp;
+                
+              </span>&nbsp;&nbsp;
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>
+                
+                  <a class="hover-with-bg" href="/tags/%E5%AF%86%E7%A0%81%E5%AE%89%E5%85%A8">密码安全</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -220,6 +304,11 @@
 
 
 
+  
+    <script src="/notes/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/notes/js/post.js" ></script>
+
 
 
   <script src="/notes/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -260,7 +349,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签 - 传输安全&nbsp;",
+        "web 安全 --- 密码安全&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

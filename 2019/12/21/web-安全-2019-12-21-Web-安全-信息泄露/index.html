@@ -15,7 +15,7 @@
   <meta name="description" content="Note, Blog, Memo">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="undefined">
-  <title>Web-安全浅述 --- CSRF ~ John&#39;s Notes</title>
+  <title>Web 安全 --- 信息泄露 ~ John&#39;s Notes</title>
 
   <link rel="stylesheet" href="/notes/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="/notes/lib/bootstrap/css/bootstrap.min.css"  >
@@ -111,7 +111,7 @@
               
                 <p class="mt-3">
                   <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-                  星期四, 十一月 7日 2019, 12:22 凌晨
+                  星期六, 十二月 21日 2019, 12:25 凌晨
                 </p>
               
 
@@ -120,7 +120,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    124 字
+                    79 字
                   </span>&nbsp;
                 
 
@@ -161,15 +161,24 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
-            <p>Cross Site Request Forgy — 跨站请求伪造</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><img src="/notes/2019/11/07/web-安全浅述-CSRF/csrf.jpg" srcset="/img/loading.gif" title="ERROR Deployer not found: git">
-<h2 id="危害"><a href="#危害" class="headerlink" title="危害"></a>危害</h2><p>用户在不知情的情况下，通过自己的身份提交请求，而被攻击者利用甚至获利</p>
-<h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2><ol>
-<li>禁止三方网站携带本站 cookies，cookies 配置 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#SameSite_cookies" target="_blank" rel="noopener"><code>same-site</code></a> 属性，新浏览器才有特性</li>
-<li>验证码，有效，用户体验不好</li>
-<li>token，解决验证码体验不好问题，不过效果不如验证码</li>
-<li>校验 referer，部分浏览器可以不携带或者更改referer</li>
-</ol>
+            <h2 id="信息泄露"><a href="#信息泄露" class="headerlink" title="信息泄露"></a>信息泄露</h2><h3 id="形式"><a href="#形式" class="headerlink" title="形式"></a>形式</h3><ul>
+<li>泄露系统敏感信息</li>
+<li>泄露用户敏感信息</li>
+<li>泄露用户密码</li>
+</ul>
+<h3 id="途径"><a href="#途径" class="headerlink" title="途径"></a>途径</h3><ul>
+<li>错误信息失控</li>
+<li>SQL注入</li>
+<li>水平权限控制不当（横向越权）</li>
+<li>XSS/CSRF</li>
+<li>…</li>
+</ul>
+<h2 id="OAuth"><a href="#OAuth" class="headerlink" title="OAuth"></a>OAuth</h2><ul>
+<li>一切行为有用户授权</li>
+<li>授权行为不泄露敏感信息</li>
+<li>授权会过期</li>
+</ul>
+<img src="/notes/2019/12/21/web-安全-2019-12-21-Web-安全-信息泄露/oauth.jpg" srcset="/img/loading.gif">
 
             <hr>
           </div>
@@ -194,7 +203,9 @@
                 
                   <a class="hover-with-bg" href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>
                 
-                  <a class="hover-with-bg" href="/tags/CSRF">CSRF</a>
+                  <a class="hover-with-bg" href="/tags/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6">社会工程学</a>
+                
+                  <a class="hover-with-bg" href="/tags/%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2">信息泄露</a>
                 
               </span>
             
@@ -346,7 +357,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Web-安全浅述 --- CSRF&nbsp;",
+        "Web 安全 --- 信息泄露&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

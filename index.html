@@ -130,8 +130,200 @@
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/notes/2019/11/08/web-安全浅述-传输安全/">
-        <p class="h4 index-header">web 安全浅述 --- 传输安全</p>
+      <a href="/notes/2019/12/21/web-安全-2019-12-21-Web-安全-信息泄露/">
+        <p class="h4 index-header">Web 安全 --- 信息泄露</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">信息泄露形式
+泄露系统敏感信息
+泄露用户敏感信息
+泄露用户密码
+
+途径
+错误信息失控
+SQL注入
+水平权限控制不当（横向越权）
+XSS/CSRF
+…
+
+OAuth
+一切行为有用户授权
+授权行为不泄露敏感信息
+授权会过期
+
+
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-21&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>&nbsp;
+          
+            <a href="/tags/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6">社会工程学</a>&nbsp;
+          
+            <a href="/tags/%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2">信息泄露</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/notes/2019/12/20/web-安全-2019-12-20-web-安全-上传文件/">
+        <p class="h4 index-header">web 安全 --- 上传文件</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">上传文件被当做程序执行
+防御
+限制文件后缀
+文件类型检查
+文件内容检查（文件头）
+读取文件在输出（有性能问题）
+权限控制 - 可写可执行互斥
+
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-20&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>&nbsp;
+          
+            <a href="/tags/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6">上传文件</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/notes/2019/12/19/web-安全-2019-12-19-web-安全-接入层注入/">
+        <p class="h4 index-header">web 安全 --- 接入层注入</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">关系型数据库
+存放结构化数据
+可高效操作大量数据
+方便处理数据间关联关系
+access/sqlite/mysql/mssql/oracle
+
+SQL 注入危害
+猜解密码
+获取数据
+删库删表
+拖库
+
+防御
+关闭错误输出
+输入校验（数据类型）
+数据进行转义
+参数化查询
+使用 ORM （对象关系映射）
+
+NoSQL 注入和防御
+检测数据类型
+类型转换
+代码写完整的查询条件
+
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-19&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>&nbsp;
+          
+            <a href="/tags/%E6%8E%A5%E5%85%A5%E5%B1%82%E6%B3%A8%E5%85%A5">接入层注入</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/notes/2019/12/18/web-安全-2019-12-18-web-安全-密码安全/">
+        <p class="h4 index-header">web 安全 --- 密码安全</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">作用身份证明
+储存储存在数据库
+泄露渠道数据库被攻入服务器入侵通讯窃听内部人员泄露其他网站（撞库）
+hash 算法雪崩效应加密存储非对称加密复杂度要求加盐
+传输https登录频率（暴力破解）前端加密（意义有限）
+替代方案生物特征密码指纹声纹虹膜人脸
+– 缺陷
+
+私密性 – 容易泄露
+安全性 – 碰撞
+唯一性 – 无法修改
+
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-18&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>&nbsp;
+          
+            <a href="/tags/%E5%AF%86%E7%A0%81%E5%AE%89%E5%85%A8">密码安全</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/notes/2019/11/08/web-安全-2019-11-08-web-安全-传输安全/">
+        <p class="h4 index-header">Web 安全 --- 传输安全</p>
         
         
           
@@ -179,8 +371,8 @@ CA 监管
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/notes/2019/11/08/web-安全浅述-点击劫持/">
-        <p class="h4 index-header">web 安全浅述 --- 点击劫持</p>
+      <a href="/notes/2019/11/08/web-安全-2019-11-08-web-安全-点击劫持/">
+        <p class="h4 index-header">Web 安全 --- 点击劫持</p>
         
         
           
@@ -222,8 +414,8 @@ JavaScript 防止内嵌
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/notes/2019/11/07/web-安全浅述-Cookies/">
-        <p class="h4 index-header">web 安全浅述 --- Cookies</p>
+      <a href="/notes/2019/11/07/web-安全-2019-11-07-web-安全-Cookies/">
+        <p class="h4 index-header">Web 安全 --- Cookies</p>
         
         
           
@@ -285,8 +477,8 @@ same-site (防止 CSRF)
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/notes/2019/11/07/web-安全浅述-CSRF/">
-        <p class="h4 index-header">Web-安全浅述 --- CSRF</p>
+      <a href="/notes/2019/11/07/web-安全-2019-11-07-web-安全-CSRF/">
+        <p class="h4 index-header">Web 安全 --- CSRF</p>
         
         
           
@@ -326,8 +518,8 @@ token，解决验证码体验不好问题，不过效果不如验证码
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/notes/2019/11/05/web-安全浅述-XSS/">
-        <p class="h4 index-header">Web 安全浅述 --- XSS</p>
+      <a href="/notes/2019/11/05/web-安全-2019-11-05-web-安全-XSS/">
+        <p class="h4 index-header">Web 安全 --- XSS</p>
         
         
           
