@@ -1,5 +1,5 @@
 ---
-title: web 安全浅述 --- Cookies
+title: Web 安全 --- Cookies
 date: 2019-11-07 23:00:28
 categories:
 - Web 安全
