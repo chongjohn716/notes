@@ -1,6 +1,6 @@
 # notes
-Notes of mine
 
+Notes of mine
 
 生成静态文件
 hexo generate  hexo g
@@ -13,3 +13,6 @@ hexo server
 
 部署网站
 hexo deploy
+
+新增文章
+hexo new "XX XX"
