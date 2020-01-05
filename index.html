@@ -130,6 +130,101 @@
     
     
     <div class="col-12 col-md-8 m-auto">
+      <a href="/notes/2020/01/06/web-安全-2020-01-06-Web-安全-重放攻击/">
+        <p class="h4 index-header">Web 安全 -- 重放攻击</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">
+
+
+重放攻击(Replay Attacks)又称重播攻击、回放攻击，是指攻击者发送一个目的主机已接收过的包，来达到欺骗系统的目的，主要用于身份认证过程，破坏认证的正确性。重放攻击可以由发起者，也可以由拦截并重发该数据的敌方进行。攻击者利用网络监听或者其他方式盗取认证凭据，之后再把它重新发给认证服务器。重放攻击在任何网络通过程中都可能发生，是计算机世界黑客常用的攻击方式之一。
+
+
+
+防疫https时间戳 — 跟踪请求时间token(session)nonce签名（防止篡改）
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-01-06&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>&nbsp;
+          
+            <a href="/tags/%E9%87%8D%E6%94%BE%E6%94%BB%E5%87%BB">重放攻击</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/notes/2020/01/05/web-安全-2020-01-05-Web-安全-DOS/">
+        <p class="h4 index-header">Web 安全 -- DoS</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">DoS是Denial of Service的简称，即拒绝服务，造成DoS的攻击行为被称为DoS攻击，其目的是使计算机或网络无法提供正常的服务。最常见的DoS攻击有计算机网络宽带攻击和连通性攻击。
+模拟正常用户，大量占用服务资源，无法服务正常用户
+方式
+TCP 半连接
+http 连接
+NDS
+
+DDoS – 大规模分布式DoS
+流量可达几十到百G
+分布式
+极难防御
+
+防御
+防火墙
+交换机、路由器
+流量清洗
+高防IP
+
+预防
+避免重逻辑业务
+快速失败快速返回
+防雪崩机制
+
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-01-05&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>&nbsp;
+          
+            <a href="/tags/DOS">DOS</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
       <a href="/notes/2019/12/21/web-安全-2019-12-21-Web-安全-信息泄露/">
         <p class="h4 index-header">Web 安全 --- 信息泄露</p>
         
@@ -514,61 +609,19 @@ token，解决验证码体验不好问题，不过效果不如验证码
     </div>
   </div>
 
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/notes/2019/11/05/web-安全-2019-11-05-web-安全-XSS/">
-        <p class="h4 index-header">Web 安全 --- XSS</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Cross Site Scripting — 跨站脚本攻击
-原理在页面植入脚本
-危害
-获取用户数据
-冒充用户身份
-
-类型 (根据攻击来源)
-反射型: url 参数直接注入
-储存型: 储存到DB后，读取时注入，危害更大
-
-攻击点HTML 内容节点const content = `&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;`
-div.innerHTML = content
-
-HTML 属性&lt;img src=&quot;/404&quot; onerror=&quot;alert(&#39;xss&#39;)&quot;&gt;
-
-JavaScript 代码// 模板
-let tpl = &#39;#{data}&#39;
-let data = &#39;hello&quot;;alert(&quot;xss&quot;);&quot;&#39;
-
-// output
-let data = &quot;hello&quot;;alert(&#39;xss&#39;);&quot;&quot;
-
-富文本防御X-XSS-Protext</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-05&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/Web%20%E5%AE%89%E5%85%A8">Web 安全</a>&nbsp;
-          
-            <a href="/tags/XSS">XSS</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
 
 
+  <nav aria-label="index posts navigation">
+    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/notes/page/2/">2</a><a class="extend next" rel="next" href="/notes/page/2/"><i class="fas fa-angle-double-right"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 
