@@ -3,7 +3,7 @@ title: Web 安全 --- Cookies
 date: 2019-11-07 23:00:28
 categories:
 - Web 安全
-- 笔记
+- Note
 tags: 
 - Web 安全
 - Cookies
